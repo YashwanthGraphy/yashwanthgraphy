@@ -1,230 +1,1452 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title> YashwanthGraphy Portfolio </title>
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: Arial, sans-serif;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    body {
-      background: #111;
-      color: white;
-      line-height: 1.6;
-    }
+<title>YashwanthGraphy</title>
 
-    header {
-      height: 100vh;
-      background: url('https://images.unsplash.com/photo-1516035069371-29a1b244cc32?q=80&w=1200&auto=format&fit=crop') center/cover no-repeat;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-    }
+<!-- GOOGLE FONTS -->
 
-    header .content {
-      background: rgba(0,0,0,0.6);
-      padding: 40px;
-      border-radius: 10px;
-    }
+<link rel="preconnect" href="https://fonts.googleapis.com">
 
-    header h1 {
-      font-size: 60px;
-      margin-bottom: 10px;
-    }
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    header p {
-      font-size: 22px;
-      color: #ddd;
-    }
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Great+Vibes&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-    nav {
-      background: #000;
-      padding: 15px;
-      text-align: center;
-      position: sticky;
-      top: 0;
-    }
+<!-- FONT AWESOME -->
 
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin: 0 15px;
-      font-size: 18px;
-    }
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
 
-    nav a:hover {
-      color: #f39c12;
-    }
+<style>
 
-    section {
-      padding: 80px 10%;
-    }
+/* RESET */
 
-    .title {
-      text-align: center;
-      margin-bottom: 50px;
-      font-size: 40px;
-      color: #f39c12;
-    }
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
 
-    .about {
-      text-align: center;
-      max-width: 800px;
-      margin: auto;
-      font-size: 20px;
-      color: #ccc;
-    }
+html{
+  scroll-behavior:smooth;
+}
 
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 20px;
-    }
+body{
 
-    .gallery img {
-      width: 100%;
-      height: 350px;
-      object-fit: cover;
-      border-radius: 10px;
-      transition: 0.3s;
-    }
+  background:#050505;
 
-    .gallery img:hover {
-      transform: scale(1.05);
-    }
+  color:white;
 
-    .services {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-    }
+  font-family:'Poppins',sans-serif;
 
-    .service-box {
-      background: #1c1c1c;
-      padding: 30px;
-      border-radius: 10px;
-      text-align: center;
-    }
+  overflow-x:hidden;
+}
 
-    .service-box h3 {
-      margin-bottom: 15px;
-      color: #f39c12;
-    }
+/* BACKGROUND */
 
-    .contact {
-      text-align: center;
-    }
+body::before{
 
-    .contact p {
-      margin: 10px 0;
-      font-size: 18px;
-    }
+  content:'';
 
-    footer {
-      background: black;
-      text-align: center;
-      padding: 20px;
-      color: #aaa;
-    }
+  position:fixed;
 
-    @media(max-width: 768px) {
-      header h1 {
-        font-size: 40px;
-      }
+  inset:0;
 
-      header p {
-        font-size: 18px;
-      }
-    }
-  </style>
+  background:
+  linear-gradient(
+    rgba(0,0,0,0.82),
+    rgba(0,0,0,0.9)
+  ),
+  url('https://images.unsplash.com/photo-1516035069371-29a1b244cc32?q=80&w=1920');
+
+  background-size:cover;
+
+  background-position:center;
+
+  z-index:-5;
+}
+
+/* NAVBAR */
+
+nav{
+
+  position:fixed;
+
+  top:0;
+
+  width:100%;
+
+  padding:22px 7%;
+
+  display:flex;
+
+  justify-content:space-between;
+
+  align-items:center;
+
+  z-index:999;
+
+  background:rgba(0,0,0,0.35);
+
+  backdrop-filter:blur(12px);
+
+  border-bottom:
+  1px solid rgba(255,165,0,0.1);
+}
+
+/* LOGO */
+
+.logo{
+
+  font-size:42px;
+
+  font-family:'Great Vibes',cursive;
+
+  color:white;
+
+  text-decoration:none;
+}
+
+.logo span{
+
+  color:#f7a81b;
+}
+
+/* NAV LINKS */
+
+.nav-links{
+
+  display:flex;
+
+  gap:45px;
+}
+
+.nav-links a{
+
+  text-decoration:none;
+
+  color:white;
+
+  font-size:17px;
+
+  transition:.3s;
+}
+
+.nav-links a:hover{
+
+  color:#f7a81b;
+}
+
+/* NAV BUTTON */
+
+.nav-btn{
+
+  background:#f7a81b;
+
+  color:black;
+
+  padding:14px 30px;
+
+  border-radius:10px;
+
+  text-decoration:none;
+
+  font-weight:600;
+
+  transition:.4s;
+}
+
+.nav-btn:hover{
+
+  transform:translateY(-4px);
+
+  background:white;
+}
+
+/* HERO SECTION */
+
+.hero{
+
+  min-height:100vh;
+
+  display:flex;
+
+  justify-content:center;
+
+  align-items:center;
+
+  padding:130px 7% 70px;
+}
+
+/* HERO CONTAINER */
+
+.hero-container{
+
+  width:100%;
+
+  max-width:1450px;
+
+  display:grid;
+
+  grid-template-columns:1fr 1fr;
+
+  gap:70px;
+
+  align-items:center;
+
+  padding:45px;
+
+  border-radius:35px;
+
+  background:
+  rgba(255,255,255,0.03);
+
+  border:
+  1px solid rgba(255,165,0,0.12);
+
+  backdrop-filter:blur(20px);
+
+  box-shadow:
+  0 0 50px rgba(255,165,0,0.08);
+}
+
+/* HERO IMAGE */
+
+.hero-image{
+
+  position:relative;
+
+  width:350px;
+
+  height:500px;
+
+  overflow:hidden;
+
+  border-radius:25px;
+
+  box-shadow:
+  0 0 45px rgba(255,165,0,0.18);
+}
+
+.hero-image img{
+
+  width:100%;
+
+  height:100%;
+
+  object-fit:cover;
+
+  transition:1s;
+}
+
+.hero-image img:hover{
+
+  transform:scale(1.05);
+}
+
+/* SIDE TEXT */
+
+.vertical-text{
+
+  position:absolute;
+
+  left:-55px;
+
+  top:50%;
+
+  transform:
+  rotate(-90deg)
+  translateY(-50%);
+
+  letter-spacing:5px;
+
+  font-size:13px;
+
+  color:#c7c7c7;
+}
+
+/* HERO CONTENT */
+
+.hero-content small{
+
+  color:#f7a81b;
+
+  letter-spacing:4px;
+
+  font-size:18px;
+}
+
+.hero-content h1{
+
+  margin-top:18px;
+
+  font-size:105px;
+
+  line-height:1;
+
+  font-family:'Cormorant Garamond',serif;
+
+  font-weight:700;
+}
+
+.hero-content h1 span{
+
+  color:#f7a81b;
+}
+
+/* HERO SUBTEXT */
+
+.hero-content p{
+
+  margin-top:28px;
+
+  color:#d6d6d6;
+
+  font-size:22px;
+
+  line-height:1.8;
+}
+
+/* BUTTONS */
+
+.hero-buttons{
+
+  margin-top:50px;
+
+  display:flex;
+
+  gap:25px;
+
+  flex-wrap:wrap;
+}
+
+/* BUTTON STYLE */
+
+.hero-buttons a{
+
+  text-decoration:none;
+
+  padding:18px 38px;
+
+  border-radius:12px;
+
+  font-size:18px;
+
+  font-weight:600;
+
+  transition:.4s;
+}
+
+/* BOOK NOW */
+
+.book-btn{
+
+  background:#f7a81b;
+
+  color:black;
+
+  box-shadow:
+  0 0 30px rgba(255,165,0,0.25);
+}
+
+.book-btn:hover{
+
+  transform:translateY(-5px);
+
+  background:white;
+}
+
+/* PARTNER */
+
+.partner-btn{
+
+  border:2px solid #f7a81b;
+
+  color:white;
+}
+
+.partner-btn:hover{
+
+  background:#f7a81b;
+
+  color:black;
+
+  transform:translateY(-5px);
+}
+
+/* ABOUT */
+
+.about-section{
+
+  padding:90px 7%;
+}
+
+/* ABOUT GRID */
+
+.about-container{
+
+  display:grid;
+
+  grid-template-columns:1.1fr 0.9fr;
+
+  gap:60px;
+
+  align-items:start;
+}
+
+/* LEFT ABOUT */
+
+.about-left small{
+
+  color:#f7a81b;
+
+  letter-spacing:3px;
+
+  font-size:18px;
+}
+
+.about-left h2{
+
+  margin-top:15px;
+
+  font-size:72px;
+
+  font-family:'Cormorant Garamond',serif;
+}
+
+.about-left h2 span{
+
+  color:#f7a81b;
+}
+
+.about-left p{
+
+  margin-top:30px;
+
+  font-size:21px;
+
+  color:#d3d3d3;
+
+  line-height:2;
+}
+
+/* SIGNATURE */
+
+.signature{
+
+  margin-top:50px;
+
+  font-size:55px;
+
+  font-family:'Great Vibes',cursive;
+
+  color:#f7a81b;
+}
+
+.signature-sub{
+
+  margin-top:8px;
+
+  letter-spacing:3px;
+
+  color:#aaa;
+}
+
+/* RIGHT STATS */
+
+.stats{
+
+  display:grid;
+
+  grid-template-columns:1fr 1fr;
+
+  gap:30px;
+}
+
+.stat-box{
+
+  padding:40px;
+
+  border-radius:20px;
+
+  background:
+  rgba(255,255,255,0.03);
+
+  border:
+  1px solid rgba(255,165,0,0.08);
+
+  transition:.4s;
+}
+
+.stat-box:hover{
+
+  transform:translateY(-8px);
+
+  box-shadow:
+  0 0 35px rgba(255,165,0,0.12);
+}
+
+.stat-box i{
+
+  font-size:42px;
+
+  color:#f7a81b;
+}
+
+.stat-box h3{
+
+  margin-top:20px;
+
+  font-size:46px;
+}
+
+.stat-box p{
+
+  margin-top:8px;
+
+  color:#d1d1d1;
+}
+
+/* WHATSAPP */
+
+.whatsapp{
+
+  position:fixed;
+
+  right:30px;
+
+  bottom:30px;
+
+  width:75px;
+
+  height:75px;
+
+  border-radius:50%;
+
+  background:#25D366;
+
+  display:flex;
+
+  justify-content:center;
+
+  align-items:center;
+
+  color:white;
+
+  font-size:40px;
+
+  text-decoration:none;
+
+  z-index:999;
+
+  box-shadow:
+  0 0 35px rgba(37,211,102,0.5);
+}
+
+/* RESPONSIVE */
+
+@media(max-width:1100px){
+
+  .hero-container{
+
+    grid-template-columns:1fr;
+  }
+
+  .about-container{
+
+    grid-template-columns:1fr;
+  }
+
+  .hero-content h1{
+
+    font-size:75px;
+  }
+
+  .hero-image{
+
+    height:550px;
+  }
+
+}
+
+@media(max-width:768px){
+
+  nav{
+
+    padding:18px 5%;
+  }
+
+  .nav-links{
+
+    display:none;
+  }
+
+  .logo{
+
+    font-size:32px;
+  }
+
+  .hero{
+
+    padding:120px 5% 50px;
+  }
+
+  .hero-container{
+
+    padding:25px;
+  }
+
+  .hero-image{
+
+    height:420px;
+  }
+
+  .hero-content h1{
+
+    font-size:58px;
+  }
+
+  .hero-content p{
+
+    font-size:18px;
+  }
+
+  .about-left h2{
+
+    font-size:52px;
+  }
+
+  .about-left p{
+
+    font-size:18px;
+  }
+
+  .stats{
+
+    grid-template-columns:1fr;
+  }
+
+}
+
+</style>
+
 </head>
+
 <body>
 
-  <header>
-    <div class="content">
-      <h1>YashwanthGraphy</h1>
-      <p>Portrait • Street • Creative • Event Photography</p>
-    </div>
-  </header>
+<!-- NAVBAR -->
 
-  <nav>
+<nav>
+
+  <a href="#" class="logo">
+
+    Yashwanth<span>Graphy</span>
+
+  </a>
+
+  <div class="nav-links">
+
     <a href="#about">About</a>
+
     <a href="#gallery">Gallery</a>
+
     <a href="#services">Services</a>
+
     <a href="#contact">Contact</a>
-  </nav>
 
-  <section id="about">
-    <h2 class="title">About Me</h2>
-    <div class="about">
+  </div>
+
+  <a href="https://wa.me/919010296636"
+  class="nav-btn"
+  target="_blank">
+
+    Book Now
+
+  </a>
+
+</nav>
+
+<!-- HERO -->
+
+<section class="hero">
+
+  <div class="hero-container">
+
+    <!-- IMAGE -->
+
+    <div class="hero-image">
+
+      <img src="IMG20250215221118_Original.jpg" alt="Yashwanth">
+
+      <div class="vertical-text">
+
+      </div>
+
+    </div>
+
+    <!-- CONTENT -->
+
+    <div class="hero-content">
+
+      <small>WELCOME TO</small>
+
+      <h1>
+
+        Yashwanth<span>Graphy</span>
+
+      </h1>
+
       <p>
-        I am a passionate photographer who loves capturing emotions,
-        stories, and cinematic moments through my lens.
-        My work focuses on creative portrait and street photography.
+
+        Photography • Videography • Cinematic Storytelling
+
       </p>
-    </div>
-  </section>
 
-  <section id="gallery">
-    <h2 class="title">My Gallery</h2>
+      <p>
 
-    <div class="gallery">
+        Where every frame has a purpose and every story
+        lives forever.
 
-      <img src="DSC00806.JPG">
+      </p>
 
-      <img src="DSC01449.JPG">
+      <!-- BUTTONS -->
 
-      <img src="DSC01453.JPG">
+      <div class="hero-buttons">
 
-      <img src="DSC01455.JPG">
+        <a href="https://wa.me/919010296636"
+        target="_blank"
+        class="book-btn">
 
-      <img src="DSC01456.JPG">
+          <i class="fa-solid fa-calendar-days"></i>
 
-      <img src="DSC02059.JPG">
-    </div>
-  </section>
+          Book Now
 
-  <section id="services">
-    <h2 class="title">Services</h2>
+        </a>
 
-    <div class="services">
-      <div class="service-box">
-        <h3>Portrait Photography</h3>
-        <p>Creative and cinematic portrait sessions.</p>
+        <a href="#contact"
+        class="partner-btn">
+
+          <i class="fa-solid fa-handshake"></i>
+
+          Join as a Partner
+
+        </a>
+
       </div>
 
-      <div class="service-box">
-        <h3>Event Photography</h3>
-        <p>Professional coverage for events and functions.</p>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ABOUT -->
+
+<section class="about-section" id="about">
+
+  <div class="about-container">
+
+    <!-- LEFT -->
+
+    <div class="about-left">
+
+      <small>ABOUT ME</small>
+
+      <h2>
+
+        My <span>Story</span>
+
+      </h2>
+
+      <p>
+
+        My self Poreddy Yashwanth Reddy,
+        a passionate photographer and videographer
+        who loves capturing emotions, stories,
+        and cinematic moments through creativity
+        and vision.
+
+      </p>
+
+      <p>
+
+        I specialize in portraits, cinematic reels,
+        events, and creative visual storytelling
+        with professional editing and color grading.
+
+      </p>
+
+      <p>
+
+        Through photography and videography,
+        I create visuals that connect emotionally
+        and turn memories into timeless art.
+
+     
+
+    </div>
+
+    <!-- RIGHT -->
+
+    <div class="stats">
+
+      <div class="stat-box">
+
+        <i class="fa-solid fa-camera"></i>
+
+        <h3>50+</h3>
+
+        <p>Photoshoots</p>
+
       </div>
 
-      <div class="service-box">
-        <h3>Photo Editing</h3>
-        <p>High-quality retouching and color grading.</p>
+      <div class="stat-box">
+
+        <i class="fa-solid fa-video"></i>
+
+        <h3>100+</h3>
+
+        <p>Videography Projects</p>
+
       </div>
+
+      <div class="stat-box">
+
+        <i class="fa-solid fa-users"></i>
+
+        <h3>50+</h3>
+
+        <p>Happy Clients</p>
+
+      </div>
+
+      <div class="stat-box">
+
+        <i class="fa-solid fa-award"></i>
+
+        <h3>3+</h3>
+
+        <p>Years Experience</p>
+
+      </div>
+
     </div>
-  </section>
 
-  <section id="contact">
-    <h2 class="title">Contact Me</h2>
+  </div>
 
-    <div class="contact">
-      <p>Email: yashwanthgraphy@gmail.com</p>
-      <p>Instagram: @yashwanthgraphy</p>
-      <p>Phone: +91 9010296636</p>
+</section>
+
+<!-- GALLERY SECTION -->
+
+<section class="gallery-section" id="gallery">
+
+  <!-- TITLE -->
+
+  <div class="gallery-title">
+
+    <h1>My Gallery</h1>
+
+  </div>
+
+  <!-- PHOTOGRAPHY -->
+
+  <div class="category-title">
+
+    <h2>Photography</h2>
+
+  </div>
+
+  <div class="gallery-grid">
+
+    <div class="gallery-item">
+      <img src="DSC00806.jpg" alt="">
     </div>
-  </section>
 
-  <footer>
-    <p>© 2026 YashwanthGraphy | All Rights Reserved</p>
-  </footer>
+    <div class="gallery-item">
+      <img src="DSC01449.jpg" alt="">
+    </div>
+
+    <div class="gallery-item">
+      <img src="DSC01453.jpg" alt="">
+    </div>
+
+    <div class="gallery-item">
+      <img src="Chandra.jpg" alt="">
+    </div>
+
+    <div class="gallery-item">
+      <img src="Joy.jpg" alt="">
+    </div>
+
+    <div class="gallery-item">
+      <img src="Sam.jpg" alt="">
+    </div>
+
+  </div>
+
+  <!-- VIDEOGRAPHY -->
+
+  <div class="category-title video-heading">
+
+    <h2>Videography</h2>
+
+  </div>
+
+  <div class="gallery-grid">
+
+    <div class="gallery-item">
+
+      <video controls>
+
+        <source src="1.MP4" type="video/mp4">
+
+      </video>
+
+    </div>
+
+    <div class="gallery-item">
+
+      <video controls>
+
+        <source src="22.mp4" type="video/mp4">
+
+      </video>
+
+    </div>
+
+    <div class="gallery-item">
+
+      <video controls>
+
+        <source src="3.MP4" type="video/mp4">
+
+      </video>
+
+    </div>
+
+    <div class="gallery-item">
+
+      <video controls>
+
+        <source src="444.mp4" type="video/mp4">
+
+      </video>
+
+    </div>
+
+    <div class="gallery-item">
+
+      <video controls>
+
+        <source src="5.MP4" type="video/mp4">
+
+      </video>
+
+    </div>
+
+    <div class="gallery-item">
+
+      <video controls>
+
+        <source src="6.MP4" type="video/mp4">
+
+      </video>
+
+    </div>
+
+  </div>
+
+</section>
+
+<style>
+
+/* GALLERY SECTION */
+
+.gallery-section{
+
+  padding:80px 7%;
+
+  background:#050505;
+}
+
+/* MAIN TITLE */
+
+.gallery-title{
+
+  text-align:center;
+
+  margin-bottom:60px;
+}
+
+.gallery-title h1{
+
+  font-size:80px;
+
+  color:#f7a81b;
+
+  font-family:'Poppins',sans-serif;
+
+  font-weight:700;
+}
+
+/* CATEGORY TITLE */
+
+.category-title{
+
+  margin-bottom:35px;
+}
+
+.category-title h2{
+
+  font-size:42px;
+
+  color:white;
+
+  font-weight:600;
+}
+
+/* VIDEO HEADING SPACE */
+
+.video-heading{
+
+  margin-top:90px;
+}
+
+/* GRID */
+
+.gallery-grid{
+
+  display:grid;
+
+  grid-template-columns:repeat(3,1fr);
+
+  gap:28px;
+}
+
+/* ITEM */
+
+.gallery-item{
+
+  height:420px;
+
+  overflow:hidden;
+
+  border-radius:18px;
+
+  background:#111;
+
+  transition:0.5s;
+}
+
+/* IMAGE */
+
+.gallery-item img{
+
+  width:100%;
+
+  height:100%;
+
+  object-fit:cover;
+
+  display:block;
+
+  transition:0.6s;
+}
+
+/* VIDEO */
+
+.gallery-item video{
+
+  width:100%;
+
+  height:100%;
+
+  object-fit:cover;
+
+  display:block;
+}
+
+/* HOVER */
+
+.gallery-item:hover{
+
+  transform:translateY(-8px);
+
+  box-shadow:
+  0 0 35px rgba(255,165,0,0.12);
+}
+
+.gallery-item:hover img{
+
+  transform:scale(1.05);
+}
+
+/* RESPONSIVE */
+
+@media(max-width:992px){
+
+  .gallery-grid{
+
+    grid-template-columns:1fr 1fr;
+  }
+
+}
+
+@media(max-width:768px){
+
+  .gallery-grid{
+
+    grid-template-columns:1fr;
+  }
+
+  .gallery-item{
+
+    height:350px;
+  }
+
+  .gallery-title h1{
+
+    font-size:55px;
+  }
+
+}
+
+</style>
+
+<!-- SERVICES HEADER -->
+
+<div class="services-header">
+
+  <h1>Services</h1>
+
+</div>
+
+<section id="services">
+
+
+  <div class="services">
+
+    <!-- BOX 1 -->
+
+    <div class="service-box">
+
+      <h3>Portrait Photography</h3>
+
+      <p>
+        Creative and cinematic portrait
+        sessions with professional editing.
+      </p>
+
+    </div>
+
+    <!-- BOX 2 -->
+
+    <div class="service-box">
+
+      <h3>Event Photography</h3>
+
+      <p>
+        Professional coverage for weddings,
+        events, and celebrations.
+      </p>
+
+    </div>
+
+    <!-- BOX 3 -->
+
+    <div class="service-box">
+
+      <h3>Videography</h3>
+
+      <p>
+        Cinematic reels, short films,
+        and creative video production.
+      </p>
+
+    </div>
+
+    <!-- BOX 4 -->
+
+    <div class="service-box">
+
+      <h3>Photo & Video Editing</h3>
+
+      <p>
+        High-quality retouching,
+        cinematic color grading,
+        and video editing.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+<style>
+
+/* SERVICES HEADER */
+
+.services-header{
+
+  padding-left:7%;
+
+  margin-bottom:35px;
+}
+
+.services-header h1{
+
+  font-size:42px;
+
+  font-weight:700;
+
+  color:white;
+
+  line-height:1;
+}
+
+/* SERVICES */
+
+.services{
+
+  display:grid;
+
+  grid-template-columns:repeat(2,1fr);
+
+  gap:35px;
+
+  max-width:1100px;
+
+  margin:auto;
+}
+
+/* SERVICE BOX */
+
+.service-box{
+
+  background:#1c1c1c;
+
+  padding:45px;
+
+  border-radius:18px;
+
+  text-align:center;
+
+  transition:0.4s;
+
+  border:
+  1px solid rgba(255,165,0,0.08);
+}
+
+.service-box:hover{
+
+  transform:translateY(-10px);
+
+  box-shadow:
+  0 0 30px rgba(255,165,0,0.15);
+}
+
+.service-box h3{
+
+  margin-bottom:20px;
+
+  color:#f39c12;
+
+  font-size:38px;
+
+  line-height:1.3;
+}
+
+.service-box p{
+
+  color:#d0d0d0;
+
+  line-height:1.9;
+
+  font-size:22px;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+  .services{
+
+    grid-template-columns:1fr;
+  }
+
+  .service-box h3{
+
+    font-size:30px;
+  }
+
+  .service-box p{
+
+    font-size:18px;
+  }
+
+}
+
+</style>
+
+<!-- CONTACT SECTION -->
+
+<section id="contact">
+
+  <!-- TITLE -->
+
+  <h1 class="contact-title">
+
+    Contact Me
+
+  </h1>
+
+  <!-- CONTACT DETAILS -->
+
+  <div class="contact-details">
+
+    <!-- EMAIL -->
+
+    <p>
+
+      <a href="mailto:yashwanthgraphy@gmail.com">
+
+        Email: yashwanthgraphy@gmail.com
+
+      </a>
+
+    </p>
+
+    <!-- INSTAGRAM -->
+
+    <p>
+
+      <a href="https://instagram.com/yashwanthgraphy"
+      target="_blank">
+
+        Instagram: @yashwanthgraphy
+
+      </a>
+
+    </p>
+
+    <!-- PHONE -->
+
+    <p>
+
+      <a href="tel:+919010296636">
+
+        Phone: +91 9010296636
+
+      </a>
+
+    </p>
+
+  </div>
+
+</section>
+
+<style>
+
+/* CONTACT SECTION */
+
+#contact{
+
+  padding:80px 7%;
+
+  text-align:center;
+}
+
+/* TITLE */
+
+.contact-title{
+
+  font-size:80px;
+
+  color:#f39c12;
+
+  margin-bottom:60px;
+
+  font-weight:700;
+}
+
+/* CONTACT DETAILS */
+
+.contact-details p{
+
+  margin:25px 0;
+}
+
+/* LINKS */
+
+.contact-details a{
+
+  color:white;
+
+  text-decoration:none;
+
+  font-size:30px;
+
+  transition:0.3s;
+}
+
+.contact-details a:hover{
+
+  color:#f39c12;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+  .contact-title{
+
+    font-size:45px;
+  }
+
+  .contact-details a{
+
+    font-size:20px;
+  }
+
+}
+
+</style>
+
+</style>
+  
+    <!-- SIGNATURE -->
+
+<div class="signature"
+style="margin-top:120px;">
+
+  Yashwanth Reddy
+
+</div>
+
+<div class="signature-sub"
+style="
+margin-top:20px;
+letter-spacing:8px;
+">
+
+  FOUNDER & CREATIVE
+
+</div>
+<!-- WHATSAPP -->
+
+<a href="https://wa.me/919010296636"
+class="whatsapp"
+target="_blank">
+
+  <i class="fa-brands fa-whatsapp"></i>
+
+</a>
 
 </body>
+
 </html>
